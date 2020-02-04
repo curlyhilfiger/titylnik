@@ -6,6 +6,6 @@ from secretary import Renderer
 def from_template(template, context):
     engine = Renderer()
 
-    result = engine.render('app/static/word/title.odt', context=context)
+    result = engine.render(template, context=context)
 
     return result

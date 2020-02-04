@@ -1,0 +1,157 @@
+{% extends 'curse.html' %}
+    {% block title %}
+    <title>Титульный лист реферата</title>
+    {% endblock %}
+
+    {% block body %}
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-5-tablet is-4-desktop is-4-widescreen">
+                <form action="" method="POST" class="box">
+                  <h1 class="title" style="color: black;">Заполните форму</h1>
+                  <div class="stage">
+                    <div class="field is-horizontal">
+                      <div class="field-body">
+                        <div class="field">
+                          <label for="" class="label">Вуз</label>
+                          <div class="control has-icons-left">
+                            <input name="university" type="text" placeholder="Полное название вуза..." class="input" required>
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-university"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field is-horizontal">
+                      <div class="field">
+                        <label  for="" class="label">Кафедра</label>
+                        <div class="control has-icons-left">
+                          <input name="chair" type="text" placeholder="Физики..." class="input" required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-id-card"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Тема Реферата</label>
+                      <div class="control has-icons-left">
+                        <textarea name="theme" class="textarea is-primary" placeholder="Тема реферата"></textarea>
+                      </div>
+                    </div>
+                    <div class="field is-horizontal is-right">
+                      <div class="buttons is-right">
+                        <button class="button is-success" onclick="showTab(1);">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                      </div>  
+                    </div>
+                  </div>
+                  <!-- stage -->
+                  <div class="stage" style="display: none;">
+                    <div class="field">
+                      <label for="" class="label">Ф.И.О.</label>
+                        <div class="control has-icons-left">
+                          <input name="full_name" type="text" placeholder="Иванов И.И." class="input" required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-user-circle"></i>
+                          </span>
+                        </div>
+                    </div>
+
+                      <div class="field">
+                        <label for="" class="label">Курс</label>
+                        <div class="control has-icons-left">
+                          <input name="course" type="text" placeholder="Курс" class="input">
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-id-card"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label for="" class="label">Группа</label>
+                        <div class="control has-icons-left">
+                          <input name="group_name" type="text" placeholder="Краткое название" class="input">
+                          <input name="group" type="text" placeholder="Группа" class="input">
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-id-card"></i>
+                          </span>
+                        </div>
+                      </div>
+                    
+                    <div class="field">
+                      <button class="button is-danger prev" onclick="showTab(0)">
+                        <i class="fa fa-arrow-left"></i>
+                      </button>
+                      <button class="button is-success next" onclick="showTab(2)">
+                        <i class="fa fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- stage -->
+                  <div class="stage" style="display: none;">
+                    <div class="field">
+                      <label for="" class="label">Проверил</label>
+                        <div class="control has-icons-left">
+                          <input name="teacher" type="text" placeholder="Ф.И.О." class="input" required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-user-circle"></i>
+                          </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                      <div class="control">
+                        <div class="select is-primary">
+                          <select name="position">
+                            <option>Преподаватель</option>
+                            <option>Старший преподаватель</option>
+                            <option>Доцент</option>
+                            <option>Профессор</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Город</label>
+                      <div class="control has-icons-left">
+                        <input name="city" type="text" placeholder="Город..." class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-building"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <button class="button is-danger prev" onclick="showTab(1)">
+                        <i class="fa fa-arrow-left"></i>
+                      </button>
+                      <button type="submit" class="button is-success next">
+                        <i class="fa fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endblock %}
+  
+    {% block footer %}
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Титульник.org</strong> by curlyhilfiger.
+          </p>
+          <button class="button is-small" onclick="window.location.href = 'https://github.com/curlyhilfiger';">
+            <span class="icon is-small">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>GitHub</span>
+          </button>
+        </div>
+      </footer>
+    {% endblock %}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css"
+    />
+    <script src="https://use.fontawesome.com/5a8f7f6c78.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    {% block title %}
+    <title>Титульный лист курсовой</title>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-5-tablet is-4-desktop is-4-widescreen">
+              <form action="" method="POST" class="box">
+                <h1 class="title" style="color: black;">Заполните форму</h1>
+                <div class="stage">
+                  <div class="field is-horizontal">
+                    <div class="field-body">
+                      <div class="field">
+                        <label for="" class="label">Вуз</label>
+                        <div class="control has-icons-left">
+                          <input name="university" type="text" placeholder="Полное название вуза..." class="input" required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-university"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field">
+                      <label for="" class="label">Факультет</label>
+                      <div class="control has-icons-left">
+                        <input name="facultet" type="text" placeholder="Полное название" class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-building"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label  for="" class="label">Кафедра</label>
+                      <div class="control has-icons-left">
+                        <input name="chair" type="text" placeholder="Физики..." class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-id-card"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Дисциплина</label>
+                    <div class="control has-icons-left">
+                      <textarea name="subject" class="textarea is-primary" placeholder="Полное наименование дисциплины..."></textarea>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Тема курсовой</label>
+                    <div class="control has-icons-left">
+                      <textarea name="theme" class="textarea is-primary" placeholder="Тема курсовой работы..."></textarea>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal is-right">
+                    <div class="buttons">
+                      <button class="button is-success" onclick="showTab(1);">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </button>
+                    </div>  
+                  </div>
+                </div>
+                <!-- stage -->
+                <div class="stage" style="display: none;">
+                  <div class="field">
+                    <label for="" class="label">Ф.И.О.</label>
+                      <div class="control has-icons-left">
+                        <input name="full_name" type="text" placeholder="Иванов Иван Иванович" class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-user-circle"></i>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field">
+                      <label for="" class="label">Курс</label>
+                      <div class="control has-icons-left">
+                        <input name="course" type="text" placeholder="Курс" class="input">
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-id-card"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Группа</label>
+                      <div class="control has-icons-left">
+                        <input name="group" type="text" placeholder="Группа" class="input">
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-id-card"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <button class="button is-danger prev" onclick="showTab(0)">
+                      <i class="fa fa-arrow-left"></i>
+                    </button>
+                    <button class="button is-success next" onclick="showTab(2)">
+                      <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- stage -->
+                <div class="stage" style="display: none;">
+                  <div class="field">
+                    <label for="" class="label">Научный руководитель</label>
+                      <div class="control has-icons-left">
+                        <input name="teacher" type="text" placeholder="Ф.И.О." class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-user-circle"></i>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <div class="select is-primary">
+                        <select name="position">
+                          <option>Преподаватель</option>
+                          <option>Старший преподаватель</option>
+                          <option>Доцент</option>
+                          <option>Профессор</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Город</label>
+                    <div class="control has-icons-left">
+                      <input name="city" type="text" placeholder="Город..." class="input" required>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-building"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <button class="button is-danger prev" onclick="showTab(1)">
+                      <i class="fa fa-arrow-left"></i>
+                    </button>
+                    <button type="submit" class="button is-success next">
+                      <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+
+    {% block footer %}
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Титульник.org</strong> by curlyhilfiger.
+        </p>
+        <button class="button is-small" onclick="window.location.href = 'https://github.com/curlyhilfiger';">
+          <span class="icon is-small">
+            <i class="fab fa-github"></i>
+          </span>
+          <span>GitHub</span>
+        </button>
+      </div>
+    </footer>
+    {% endblock footer %}
+
+    <script>
+      function showTab(n) {
+        var x = document.getElementsByClassName("stage");
+        if (n==0) {
+          x[n].style.display = "block";
+          x[n+1].style.display = "none";
+        }
+        x[n-1].style.display = "none";
+        x[n].style.display = "block";
+        x[n+1].style.display = "none";
+      }
+
+    </script>
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </body>
+</html>
