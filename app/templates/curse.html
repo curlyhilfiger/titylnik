@@ -10,6 +10,7 @@
     />
     <script src="https://use.fontawesome.com/5a8f7f6c78.js"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    {% block editor %} {% endblock %}
     {% block title %}
     <title>Титульный лист курсовой</title>
     {% endblock %}
@@ -182,6 +183,7 @@
     </footer>
     {% endblock footer %}
 
+    {% block scripts %}
     <script>
       function showTab(n) {
         var x = document.getElementsByClassName("stage");
@@ -195,6 +197,7 @@
       }
 
     </script>
+    {% endblock %}
 
     <script
       defer
